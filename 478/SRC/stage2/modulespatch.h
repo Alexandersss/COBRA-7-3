@@ -8,14 +8,14 @@
 
 #if defined(FIRMWARE_4_78)  // Ported by Alexander 20/01/2016
 
-#define VSH_CEX_HASH			0xa002dc02002e26db // Alexander
+#define VSH_CEX_HASH			0xa002dc02002e26db // Alexander ok!
 #define BDP_DISC_CHECK_PLUGIN_HASH	0xb8b7a5f9000031a0 // same as 4.66
 #define BASIC_PLUGINS_HASH		0xb598277a0001f870 // same as 4.76
-#define EXPLORE_PLUGIN_HASH		0xacf4af2b000ec41a // Alexander
+#define EXPLORE_PLUGIN_HASH		0xacf4af2b000ec41a // Alexander ok!
 #define EXPLORE_CATEGORY_GAME_HASH	0x9cb378e600056ae1 // same as 4.75  9fc9a53891150503531e79f51d4ab793
-#define PS1_EMU_HASH			0x7a6cbdbf0009aa43 // Alexander
+#define PS1_EMU_HASH			0x7a6cbdbf0009aa43 // Alexander ok!
 #define PS1_NETEMU_HASH 		0x7a300d52000be288 // same as 4.75
-#define GAME_EXT_PLUGIN_HASH		0xe274af7b0001e6c1 // Alexander
+#define GAME_EXT_PLUGIN_HASH		0xe274af7b0001e6c1 // Alexander ok!
 #define PSP_EMULATOR_HASH		0x7be641f500023793 // 4.76
 #define PEMUCORELIB_HASH		0xf349a563000c0d66 // same as 4.75
 #define EMULATOR_API_HASH		0xa9f5b37a0001bb45 // same as 4.75
@@ -68,9 +68,9 @@
 #define ps1_netemu_get_region_offset	0xA440C // 
 
 /* game_ext_plugin */// 4.78 CEX
-#define sfo_check_offset		0x47980 // CEX *lis	  r3, aPage_game_ma_1@ha # "page_game_main"*
+#define sfo_check_offset		0x49C90 // CEX *lis	  r3, aPage_game_ma_1@ha # "page_game_main"*
 #define ps2_nonbw_offset3		0x17004 // CEX *rlwinm	  r0, r0, 0,26,26* the same as 4.76
-#define ps_region_error_offset		0x68C4 // CEX  the same as 4.76
+#define ps_region_error_offset		0x68C4 // CEX  the same as 4.76		bne cr7, loc_68E0
 /* Disable the check for the current video setting */
 //#define ps_video_error_offset		0x3171C // li %r3, 0  disabled due to its issue with remote play on vita
 
@@ -79,15 +79,15 @@
 #define psp_set_psp_mode_offset 	0x1C18 // the same as 4.70
 
 /* emulator_api */ // the same as 4.66 - 4.78
-#define psp_read			0x102D8 //
-#define psp_read_header 		0x1125C //
-#define psp_drm_patch5			0x11080 //
-#define psp_drm_patch6			0x110B0 //
-#define psp_drm_patch7			0x110C8 //
-#define psp_drm_patch8			0x110CC //
-#define psp_drm_patch9			0x1120C //
-#define psp_drm_patch11 		0x11210 //
-#define psp_drm_patch12 		0x11220 //
+#define psp_read					0x102D8 //
+#define psp_read_header 			0x1125C //
+#define psp_drm_patch5				0x11080 //
+#define psp_drm_patch6				0x110B0 //
+#define psp_drm_patch7				0x110C8 //
+#define psp_drm_patch8				0x110CC //
+#define psp_drm_patch9				0x1120C //
+#define psp_drm_patch11 			0x11210 //
+#define psp_drm_patch12 			0x11220 //
 #define psp_product_id_patch1		0x11320 //
 #define psp_product_id_patch3		0x115F8 //
 #define umd_mutex_offset		(0x64480+0x38C) //
