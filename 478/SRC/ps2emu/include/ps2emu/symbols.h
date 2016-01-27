@@ -401,33 +401,32 @@
 /* Vars */
 #define arguments_symbol			0x6E7298 //
 
-#elif defined(PS2NETEMU) // the same as 4.65
+#elif defined(PS2NETEMU) // 
 
-#define	cdvd_read_symbol			0x137744 // 
+#define TOC                0x751280 // same as 4.65-4.75
 
-#define TOC					0x751280 //
+#define cdvd_read_symbol   0x1377C4 // 0x137744
+#define ufs_open_symbol    0x1ECC5C // 0x1ECBDC
+#define ufs_close_symbol   0x1ECB10 // 0x1ECA90
+#define ufs_read_symbol    0x1ED5CC // 0x1ED54C
+#define ufs_write_symbol   0x1ED458 // 0x1ED3D8
+#define ufs_fstat_symbol   0x1EC760 // 0x1EC6E0
 
-#define ufs_open_symbol				0x1ECBDC // 
-#define ufs_close_symbol			0x1ECA90 // 
-#define ufs_read_symbol				0x1ED54C // 
-#define ufs_write_symbol			0x1ED3D8 // 
-#define ufs_fstat_symbol			0x1EC6E0 // 
+#define log_printf_symbol  0xB8E30  // same as 4.65-4.75
 
-#define log_printf_symbol			0xB8E30  //
-
-#define memcpy_symbol				0x118A10 //
-#define memset_symbol				0x1189BC // 
-#define memcmp_symbol				0x1187E0 //
-#define memchr_symbol				0x1E6D58 // 
-#define snprintf_symbol				0x1196A4 //
-#define strcpy_symbol				0x11885C // 
-#define strncpy_symbol				0x1EB5C0 //
-#define strcat_symbol				0x118894 // 
-#define strlen_symbol				0x118824 //
-#define strcmp_symbol				0x1EB5F0 //
-#define strncmp_symbol				0x1EB674 // 
-#define strchr_symbol				0x1EB548 // 
-#define strrchr_symbol				0x1EB57C //
+#define memcpy_symbol      0x118A90 // 0x118A10
+#define memset_symbol      0x118A3C // 0x1189BC
+#define memcmp_symbol      0x118860 // 0x1187E0
+#define memchr_symbol      0x1E6DD8 // 0x1E6D58
+#define snprintf_symbol    0x119724 // 0x1196A4
+#define strcpy_symbol      0x1188DC // 0x11885C
+#define strncpy_symbol     0x1EB640 // 0x1EB5C0
+#define strcat_symbol      0x118914 // 0x118894
+#define strlen_symbol      0x1188A4 // 0x118824
+#define strcmp_symbol      0x1EB670 // 0x1EB5F0
+#define strncmp_symbol     0x1EB6F4 // 0x1EB674
+#define strchr_symbol      0x1EB5C8 // 0x1EB548
+#define strrchr_symbol     0x1EB5FC // 0x1EB57C
 
 
 #endif /* type */

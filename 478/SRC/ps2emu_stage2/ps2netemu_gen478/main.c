@@ -11,20 +11,20 @@
 
 #include "../../ps2emu/include/ps2emu/symbols.h"
 
-#define read_iso_size_call	0x136038 //
-#define fstat_iso_call		0x135F2C //
-#define open_iso_call1		0x135EF0 //
-#define open_iso_call2		0x136F74 //
-#define savedata_patch		0x11AFB4 //
+#define read_iso_size_call	0x1360B8 //
+#define fstat_iso_call		0x135FAC //
+#define open_iso_call1		0x135F70 //
+#define open_iso_call2		0x136FF4 //
+#define savedata_patch		0x11B034 //
 
 #define ADDITIONAL_CODE_SIZE		0x46B0 //
 #define ADDITIONAL_DATA_SIZE		0x1000
 
-#define CODE_SECTION_ADDR		0x28F800 //
+#define CODE_SECTION_ADDR		0x3800 //
 #define DATA_SECTION_ADDR		0xB20A00 //
 #define PAYLOAD_ADDR		    0x3940 // Thanks @habib and @haxxxen for his awesome research!! now we have a lot more space in netemu
 //#define PAYLOAD_ADDR		(CODE_SECTION_ADDR+0x78+8) /* CODE_SECTION_ADDR + CODE_SECTION_SIZE + 8 to align to 0x10 */
-#define SH_ADDR			0x2921c8 /* look in self, not in elf *///
+#define SH_ADDR			0x292158 /* look in self, not in elf *///
 
 #define MAKE_JUMP(addr, to) *(uint32_t *)(addr) = (0x12 << 26) | ((((to-(uint64_t)(addr))>>2)&0xFFFFFF) << 2)
 #define MAKE_CALL(addr, to) *(uint32_t *)(addr) = (0x12 << 26) | ((((to-(uint64_t)(addr))>>2)&0xffffff) << 2) | 1

@@ -1,19 +1,19 @@
-CC		:= ppu-gcc
-CXX		:= ppu-g++
-LD		:= ppu-ld 
-OBJCOPY		:= ppu-objcopy
-OBJDUMP		:= ppu-objdump
-AR 		:= ppu-ar
-STRIP		:= ppu-strip
-INCLUDE		= ../common ../../ps2emu/include ../../lv1/include ../../debug/include
-INCLUDE		+= $(PS3DEV)/ppu/ppu/include
+CC				:= ppu-gcc
+CXX				:= ppu-g++
+LD				:= ppu-ld 
+OBJCOPY			:= ppu-objcopy
+OBJDUMP			:= ppu-objdump
+AR 				:= ppu-ar
+STRIP			:= ppu-strip
+INCLUDE			= ../common ../../ps2emu/include ../../lv1/include ../../debug/include
+INCLUDE			+= $(PS3DEV)/ppu/ppu/include
 LIBSDIR         =
 LIBS            =
 BUILD_TYPE      = release
 
-GEN		= ../ps2netemu_gen478/ps2netemu_gen.exe
-SRC_SELF=../ps2netemu_gen478/ps2_netemu.self
-OUT_SELF=ps2_netemu.self
+GEN				= ../ps2netemu_gen478/ps2netemu_gen.exe
+SRC_SELF		= ../ps2netemu_gen478/ps2_netemu.self
+OUT_SELF		= ps2_netemu.self
 
 
 CFLAGS = -ffunction-sections -fdata-sections -Os -m64 -fno-builtin -fno-exceptions \

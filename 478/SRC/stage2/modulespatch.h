@@ -25,23 +25,23 @@
 #define LIBFS_EXTERNAL_HASH		0x5bc7bce800006477 // same as 4.66
 
 
-/* vsh */ // REBUG REX 4.76.1 as of 9/9/2015
+/* vsh */ //
 
 // 4.75 CEX's Offsets
 #define cex_vsh_text_size		0x6B0000 // /* memsz of first program header aligned to 0x10000 */
 #define cex_ps2tonet_patch		0xC4B14 // 4.66CEX =0xC4C24 // "60638202 480000444BFF"
 #define cex_ps2tonet_size_patch 	0xC4B08 // 4.66CEX = 0xC4C18 // "38A004F0786400203860000060638202"
-#define cex_psp_drm_patch1		0x24277C // 
-#define cex_psp_drm_patch2		0x24321C // 
-#define cex_psp_drm_patch3		0x242E58 // 
-#define cex_psp_drm_patch4		0x243664 // 
-#define cex_psp_drm_patchA		0x242898 // 
-#define cex_psp_drm_patchB		0x243138 // 
-#define cex_psp_drm_patchC		0x2422D0 // 
-#define cex_psp_drm_patchD		0x242880 //
-#define cex_psp_drm_patchE		0x242884 //
-#define cex_psp_drm_patchF		0x243250 // 
-#define cex_vmode_patch_offset		0x445BEC // 
+#define cex_psp_drm_patch1		0x242C74 //
+#define cex_psp_drm_patch2		0x243714 //
+#define cex_psp_drm_patch3		0x243350 //
+#define cex_psp_drm_patch4		0x243B5C //
+#define cex_psp_drm_patchA		0x242D90 //
+#define cex_psp_drm_patchB		0x243630 //
+#define cex_psp_drm_patchC		0x2427C8 //
+#define cex_psp_drm_patchD		0x242D78 //
+#define cex_psp_drm_patchE		0x242D7C //
+#define cex_psp_drm_patchF		0x243748 // 
+#define cex_vmode_patch_offset		0x442E5C //
 
 /* PSP PKG 80029537 error fix */
 //#define cex_psp_newdrm_patch            0x2452AC // li %r3, 0
