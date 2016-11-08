@@ -1,0 +1,236 @@
+
+Discarded input sections
+
+ .text          0x0000000000000000        0x0 start.o
+ .data          0x0000000000000000        0x0 start.o
+ .bss           0x0000000000000000        0x0 start.o
+ .text          0x0000000000000000        0x0 crt0.o
+ .data          0x0000000000000000        0x0 crt0.o
+ .bss           0x0000000000000000        0x0 crt0.o
+ .data          0x0000000000000000        0x0 main.o
+ .bss           0x0000000000000000        0x0 main.o
+ .text          0x0000000000000000        0x0 ../../ps2emu/src/libc.o
+ .data          0x0000000000000000        0x0 ../../ps2emu/src/libc.o
+ .bss           0x0000000000000000        0x0 ../../ps2emu/src/libc.o
+ .ps2emu_strcpy.text
+                0x0000000000000000        0x0 ../../ps2emu/src/libc.o
+ .ps2emu_strlen.text
+                0x0000000000000000        0x0 ../../ps2emu/src/libc.o
+ .ps2emu_strcat.text
+                0x0000000000000000        0x0 ../../ps2emu/src/libc.o
+ .strcpy.text   0x0000000000000000        0x0 ../../ps2emu/src/libc.o
+ .strlen.text   0x0000000000000000        0x0 ../../ps2emu/src/libc.o
+ .strcat.text   0x0000000000000000        0x0 ../../ps2emu/src/libc.o
+ .memcpy.text   0x0000000000000000        0x0 ../../ps2emu/src/libc.o
+ .memset.text   0x0000000000000000        0x0 ../../ps2emu/src/libc.o
+ .text          0x0000000000000000        0x0 ../../ps2emu/src/libc_c.o
+ .data          0x0000000000000000        0x0 ../../ps2emu/src/libc_c.o
+ .bss           0x0000000000000000        0x0 ../../ps2emu/src/libc_c.o
+ .toc           0x0000000000000000        0x0 ../../ps2emu/src/libc_c.o
+ .text.strcmp   0x0000000000000000        0x0 ../../ps2emu/src/libc_c.o
+ .text.strncmp  0x0000000000000000        0x0 ../../ps2emu/src/libc_c.o
+ .text.strchr   0x0000000000000000        0x0 ../../ps2emu/src/libc_c.o
+ .text.strstr   0x0000000000000000        0x0 ../../ps2emu/src/libc_c.o
+ .text          0x0000000000000000        0x0 ../../ps2emu/src/memory.o
+ .data          0x0000000000000000        0x0 ../../ps2emu/src/memory.o
+ .bss           0x0000000000000000        0x0 ../../ps2emu/src/memory.o
+ .zeroalloc.text
+                0x0000000000000000        0x0 ../../ps2emu/src/memory.o
+ .text          0x0000000000000000        0x0 ../../ps2emu/src/io.o
+ .data          0x0000000000000000        0x0 ../../ps2emu/src/io.o
+ .bss           0x0000000000000000        0x0 ../../ps2emu/src/io.o
+ .ufs_fstat.text
+                0x0000000000000000        0x0 ../../ps2emu/src/io.o
+ .data          0x0000000000000000        0x0 ../../ps2emu/src/patch.o
+ .bss           0x0000000000000000        0x0 ../../ps2emu/src/patch.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD start.o
+LOAD crt0.o
+LOAD main.o
+LOAD ../../ps2emu/src/libc.o
+LOAD ../../ps2emu/src/libc_c.o
+LOAD ../../ps2emu/src/memory.o
+LOAD ../../ps2emu/src/io.o
+LOAD ../../ps2emu/src/patch.o
+                0x0badcafe00000000                __base = 0xbadcafe00000000
+                0x0badcafe00000000                . = __base
+                0x0badcafe00000000                __self_start = .
+
+.start          0x0badcafe00000000       0xb8
+ *(.start)
+ .start         0x0badcafe00000000       0xb8 start.o
+                0x0badcafe00000000                _start
+                0x0badcafe000000c0                . = ALIGN (0x20)
+
+.text           0x0badcafe000000c0     0x23c0
+ *(.text)
+ .text          0x0badcafe000000c0      0x130 main.o
+ .text          0x0badcafe000001f0       0xe0 ../../ps2emu/src/patch.o
+                0x0badcafe000001f0                clear_icache
+                0x0badcafe00000278                call_hooked_function
+                0x0badcafe00000258                get_patched_func_call_address
+                0x0badcafe0000021c                get_call_address
+ *(.text.*)
+ .text.crt0     0x0badcafe000002d0       0xf0 crt0.o
+ .text.main     0x0badcafe000003c0      0x958 main.o
+ .text._optical_cdvd_send_atapi_command
+                0x0badcafe00000d18      0x3f4 main.o
+ .text._emu_cdvd_send_atapi_command
+                0x0badcafe0000110c     0x1320 main.o
+ .text.memcmp   0x0badcafe0000242c       0x54 ../../ps2emu/src/libc_c.o
+
+.sfpr           0x0badcafe00002480        0x0
+ .sfpr          0x0000000000000000        0x0 linker stubs
+
+.glink          0x0badcafe00002480        0x0
+ .glink         0x0000000000000000        0x0 linker stubs
+
+.ps2emu_memcpy.text
+                0x0badcafe00002480       0x10
+ .ps2emu_memcpy.text
+                0x0badcafe00002480       0x10 ../../ps2emu/src/libc.o
+                0x0badcafe00002480                ps2emu_memcpy
+
+.ps2emu_memset.text
+                0x0badcafe00002490       0x10
+ .ps2emu_memset.text
+                0x0badcafe00002490       0x10 ../../ps2emu/src/libc.o
+                0x0badcafe00002490                ps2emu_memset
+
+.ps2emu_malloc.text
+                0x0badcafe000024a0       0x10
+ .ps2emu_malloc.text
+                0x0badcafe000024a0       0x10 ../../ps2emu/src/memory.o
+                0x0badcafe000024a0                ps2emu_malloc
+
+.ps2emu_free.text
+                0x0badcafe000024b0       0x10
+ .ps2emu_free.text
+                0x0badcafe000024b0       0x10 ../../ps2emu/src/memory.o
+                0x0badcafe000024b0                ps2emu_free
+
+.ufs_open.text  0x0badcafe000024c0       0x10
+ .ufs_open.text
+                0x0badcafe000024c0       0x10 ../../ps2emu/src/io.o
+                0x0badcafe000024c0                ufs_open
+
+.ufs_close.text
+                0x0badcafe000024d0       0x10
+ .ufs_close.text
+                0x0badcafe000024d0       0x10 ../../ps2emu/src/io.o
+                0x0badcafe000024d0                ufs_close
+
+.ufs_read.text  0x0badcafe000024e0       0x10
+ .ufs_read.text
+                0x0badcafe000024e0       0x10 ../../ps2emu/src/io.o
+                0x0badcafe000024e0                ufs_read
+
+.ufs_write.text
+                0x0badcafe000024f0       0x10
+ .ufs_write.text
+                0x0badcafe000024f0       0x10 ../../ps2emu/src/io.o
+                0x0badcafe000024f0                ufs_write
+
+.rodata         0x0badcafe00002500       0x60
+ *(.rodata)
+ *(.rodata.*)
+ .rodata.brlt   0x0badcafe00002500        0x0 linker stubs
+ .rodata.patches
+                0x0badcafe00002500       0x30 main.o
+ .rodata.str1.8
+                0x0badcafe00002530       0x30 main.o
+                0x0badcafe00002560                __reloc_start = .
+
+.data           0x0badcafe00002560      0x3ed
+ *(.data)
+ *(.data.*)
+ .data.restore  0x0badcafe00002560      0x3e8 crt0.o
+                0x0badcafe00002560                restore
+ .data.iso_fd   0x0badcafe00002948        0x4 main.o
+ .data.condition_true
+                0x0badcafe0000294c        0x1 main.o
+ *(.sdata)
+ *(.sdata.*)
+
+.bss            0x0badcafe00002950       0x54
+ *(.sbss)
+ *(.sbss.*)
+ *(COMMON)
+ *(.bss)
+ *(.bss.*)
+ .bss.is_dual_layer
+                0x0badcafe00002950        0x4 main.o
+ *fill*         0x0badcafe00002954        0x4 00
+ .bss.tracks    0x0badcafe00002958        0x8 main.o
+ .bss.layer0_size
+                0x0badcafe00002960        0x4 main.o
+ *fill*         0x0badcafe00002964        0x4 00
+ .bss.temp_buf  0x0badcafe00002968        0x8 main.o
+ .bss.condition_optical
+                0x0badcafe00002970        0x1 main.o
+ .bss.condition_ps2_cdda
+                0x0badcafe00002971        0x1 main.o
+ *fill*         0x0badcafe00002972        0x2 00
+ .bss.total_emulation
+                0x0badcafe00002974        0x4 main.o
+ .bss.iso_size  0x0badcafe00002978        0x8 main.o
+ .bss.device_type
+                0x0badcafe00002980        0x2 main.o
+ .bss.condition_iso
+                0x0badcafe00002982        0x1 main.o
+ *fill*         0x0badcafe00002983        0x5 00
+ .bss.orig_send_atapi_command
+                0x0badcafe00002988       0x10 main.o
+ .bss.num_tracks
+                0x0badcafe00002998        0x1 main.o
+ *fill*         0x0badcafe00002999        0x3 00
+ .bss.iso_size_sectors
+                0x0badcafe0000299c        0x4 main.o
+                0x0badcafe000029a0        0x4 LONG 0x0
+                0x0badcafe000029c0                . = ALIGN (0x20)
+                0x0badcafe000029c0                __toc_start = .
+                0x0badcafe0000a9c0                __toc = (. + 0x8000)
+
+.toc            0x0badcafe000029c0       0xf8
+ *(.toc)
+ .toc           0x0badcafe000029c0       0x10 crt0.o
+ .toc           0x0badcafe000029d0       0xe8 main.o
+ *(.toc.*)
+                0x0badcafe00002ab8                __toc_end = .
+                0x0badcafe00002ab8                __opd_start = .
+
+.opd            0x0badcafe00002ab8       0x98
+ *(.opd)
+ .opd           0x0badcafe00002ab8       0x18 crt0.o
+                0x0badcafe00002ab8                crt0
+ .opd           0x0badcafe00002ad0       0x68 main.o
+                0x0badcafe00002b20                _emu_cdvd_send_atapi_command
+                0x0badcafe00002ad0                emu_cdvd_send_atapi_command
+                0x0badcafe00002b08                _optical_cdvd_send_atapi_command
+                0x0badcafe00002ae0                optical_cdvd_send_atapi_command
+                0x0badcafe00002af0                main
+ .opd           0x0badcafe00002b38       0x18 ../../ps2emu/src/libc_c.o
+                0x0badcafe00002b38                memcmp
+ *(.opd.*)
+                0x0badcafe00002b50                __opd_end = .
+                0x0badcafe00002b50                __reloc_end = .
+                0x0badcafe00002b50                __self_end = .
+
+.rela.dyn       0x0badcafe00002b50        0x0
+ .rela.start    0x0000000000000000        0x0 linker stubs
+ .rela.toc      0x0000000000000000        0x0 linker stubs
+ .rela.text     0x0000000000000000        0x0 linker stubs
+OUTPUT(ps2hwemu_stage2.elf elf64-powerpc)
+LOAD linker stubs
+
+.comment        0x0000000000000000       0x36
+ .comment       0x0000000000000000       0x12 crt0.o
+ .comment       0x0000000000000012       0x12 main.o
+ .comment       0x0000000000000024       0x12 ../../ps2emu/src/libc_c.o
