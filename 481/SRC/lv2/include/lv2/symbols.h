@@ -3461,7 +3461,7 @@
 #define cellFsWrite_symbol				0x297810 // Alexander - IDA ok
 #define cellFsLseek_symbol				0x296E98 // Alexander - IDA ok
 #define cellFsStat_symbol				0x29711C // Alexander - IDA ok
-#define cellFsUtime_symbol 			    0x2983F4 // aldostools - ok
+#define cellFsUtime_symbol			    0x298C08  // same as 4.78  fixed by Joonie
 #define cellFsUnlink_internal_symbol			0x19C64C // Alexander - IDA ok
 
 #define cellFsUtilMount_symbol				0x296C78 // Alexander - IDA ok
@@ -3492,7 +3492,7 @@
 #define cellUsbdOpenPipe_symbol			        0x26152C // Alexander - IDA ok
 #define cellUsbdClosePipe_symbol			0x2614DC // Alexander - IDA ok
 #define cellUsbdControlTransfer_symbol			0x2613E0 // Alexander - IDA ok
-#define cellUsbdBulkTransfer_symbol			0X261358 // Alexander - IDA ok
+#define cellUsbdBulkTransfer_symbol			0x261360  // same as 4.78 fixed by Joonie
 
 #define decrypt_func_symbol				0x34970 // Alexander - IDA ok
 #define lv1_call_99_wrapper_symbol			0x4EEA8 // Alexander - IDA ok
@@ -3596,7 +3596,7 @@
 
 /* Legacy patches with no names yet */
 /* Kernel offsets */
-#define patch_data1_offset				0x3DF0B0 // Alexander - IDA ok
+#define patch_data1_offset				0x3E2E40 // fixed aldostool
 #define patch_func2 					0x59D84 // Alexander - IDA ok
 #define patch_func2_offset 				0x2C 
 #define patch_func8 					0x5640C // Alexander - IDA ok
@@ -3607,7 +3607,7 @@
 #define mem_base2					0x3D90 // Alexander - IDA ok
 
 /* vars */
-#define thread_info_symbol				0x37DE7 // Alexander - IDA ok
+#define thread_info_symbol				0x37DE30 // fixed aldostool
 
 #endif /* FIRMWARE */
 
